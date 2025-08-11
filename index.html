@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hazna & Dimas</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+     <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        }
+
+        html.no-scroll,
+        body.no-scroll {
+        overflow: hidden;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        }
+  
+    .music-btn {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+        background-color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        }
+
+    .music-btn i {
+        color: #4f684f;
+        font-size: 20px;
+        }
+        .event-card {
+            border: 2px solid #e4d8ca;
+            border-radius: 20px;
+            padding: 30px;
+            background-color: #f7f6f5;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .btn-light {
+        background-color: white;
+        border: none;
+        }
+
+        .btn-light:hover {
+        background-color: #f8f9fa;
+        color: #444;
+        }
+        .scroll-down-icon {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 24px;
+        color: white;
+        animation: bounce 2s infinite;
+        z-index: 1000;
+        }
+
+        @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        40% {
+            transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+            transform: translateX(-50%) translateY(-5px);
+        }
+        }
+        .event-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .event-date, .event-time {
+            font-size: 16px;
+            color: #643d12;
+            margin-bottom: 5px;
+        }
+        .event-location {
+            font-size: 16px;
+            font-weight: 600;
+            color: #643d12;
+        }
+        .event-button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #c4a582;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .event-button:hover {
+            background-color: #b8946f;
+            text-decoration: none;
+            color: white;
+        }
+        .ampersand-icon {
+           font-family: 'Great Vibes', cursive !important;
+            color: #0b1a30; /* Sesuaikan warna font agar sama dengan nama */
+            font-size: 2.5em; /* Sesuaikan ukuran */
+        }
+        #about {
+        background-image: url("img/carousel-15.png");
+        background-size: cover;
+        background-position: center top;
+        padding-top: 280px; /* Tambah padding atas */
+        padding-bottom: 280px; /* Tambah padding bawah */
+        /*background-position: center;
+        background-repeat: no-repeat;
+        margin-top: 0 ;
+        padding-top: 60px; 
+        */
+        }
+        .btn-buka-undangan {
+        background-color: #222;
+        color: white;
+        padding: 12px 28px;
+        font-weight: 500;
+        border-radius: 15px;
+        text-decoration: none;
+        font-size: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        animation: pulseShadow 3s infinite ease-in-out;
+        transition: all 0.3s ease;
+        }
+
+        .btn-buka-undangan i {
+        font-size: 18px;
+        margin-right: 8px;
+        }
+
+        .btn-buka-undangan:hover {
+        transform: scale(1.02);
+        background-color: #111;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        text-decoration: none;
+        }
+
+        @keyframes pulseShadow {
+        0%, 100% {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        50% {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+        }
+        }
+        .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 1.5s ease-out forwards;
+        }
+
+        .fade-in-delay-1 {
+        animation-delay: 0.3s;
+        }
+
+        .fade-in-delay-2 {
+        animation-delay: 0.6s;
+        }
+
+        .fade-in-delay-3 {
+        animation-delay: 0.9s;
+        }
+        .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 1.5s ease-out forwards;
+        }
+        .btn-salin {
+            background-color: #8b9bb4; /* Warna latar belakang biru gelap */
+            color: #ffffff;          /* Warna teks putih */
+            border: none;              /* Menghilangkan garis tepi */
+            border-radius: 8px;        /* Sudut membulat */
+            padding: 8px 24px;         /* Padding untuk ukuran tombol */
+            font-size: 14px;           /* Ukuran font kecil */
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;            /* Membuat tombol menjadi block-level */
+            width: fit-content;        /* Lebar tombol sesuai konten */
+            margin: 10px auto;         /* Memusatkan tombol di tengah */
+        }
+
+        .btn-salin:hover {
+            background-color: #2c3e50; /* Warna biru yang sedikit lebih gelap saat di-hover */
+        }
+        .card {
+            background-color: #fbfbfa;
+            border: none;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.3s; }
+        .fade-in-delay-2 { animation-delay: 0.6s; }
+        .fade-in-delay-3 { animation-delay: 0.9s; }
+        .fade-in-delay-4 { animation-delay: 1.2s; }
+
+        @keyframes fadeUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+        @keyframes fadeUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+       .title-couple {
+        font-size: 35px;
+        font-family: 'Playfair Display', cursive;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.2;
+        }
+
+        /* Untuk layar di bawah 768px */
+        @media (max-width: 768px) {
+        .title-couple {
+            font-size: 32px;
+        }
+        @media (max-width: 768px) {
+                .row.justify-content-center .col-md-5:first-child {
+        margin-bottom: 0 !important;
+    }
+}
+        }
+
+        /* Untuk layar sangat kecil seperti HP 400px ke bawah */
+        @media (max-width: 480px) {
+        .title-couple {
+            font-size: 26px;
+        }
+        @media (max-width: 768px) {
+            .ampersand-icon {
+                font-size: 40px; /* Ubah ukuran font menjadi lebih kecil untuk mobile */
+            }
+}
+        }
+        h1.title-couple {
+        font-size: inherit;
+        max-width: 90%;
+        margin: 0 auto;
+        }
+        .blockquote {
+        font-size: 1.20rem;
+        line-height: 1.5;
+        color: #444;
+        text-align: center;
+        padding: 0 1rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        }
+
+        .blockquote-footer {
+        font-size: 0.95rem;
+        color: #666;
+        margin-top: 0.75rem;
+        }
+
+        /* Responsive untuk layar kecil (HP) */
+        @media (max-width: 480px) {
+      .blockquote {
+        font-size: 1.1rem; /* Ukuran tulisan lebih besar */
+        padding: 0 1.2rem; /* Jarak kiri-kanan lebih besar */
+        line-height: 1.8; /* Jarak antar baris lebih lebar */
+      }
+        }
+
+        .blockquote-footer {
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 480px) {
+        .blockquote {
+            font-size: 1rem;
+            padding: 0 1rem;
+            line-height: 1.6;
+        }
+
+        .blockquote-footer {
+            font-size: 0.8rem;
+        }
+        }
+        .fade-in-up {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        .fade-delay-1 { animation-delay: 0.2s; }
+        .fade-delay-2 { animation-delay: 0.4s; }
+        .fade-delay-3 { animation-delay: 0.6s; }
+        .fade-delay-4 { animation-delay: 0.8s; }
+        .fade-delay-5 { animation-delay: 1s; }
+        /* Ukuran font default untuk desktop */
+        .lead {
+            font-size: 1.25rem;
+            line-height: 1.5;
+        }
+
+        /* Mengubah ukuran font untuk layar mobile (lebar 768px atau kurang) */
+        @media (max-width: 768px) {
+            .lead {
+                font-size: 1rem; /* Ukuran font lebih kecil untuk mobile */
+                line-height: 1.6;
+            }
+        }
+        @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+        body.no-scroll {
+        overflow: hidden;
+        }
+        #story {
+        background-image: url('img/carousel-14.png');
+        background-size: cover;
+        background-position: center;
+        }
+        #wedding-gift {
+            background-color: #f0f0f0; /* Soft gray color */
+            background-image: url('img/carousel-14.png');
+            background-size: cover;
+            background-position: center;
+        }
+        #contact {
+            background-image: url('img/footer-background.png');
+            background-size: cover;
+            background-position: center;
+    }
+   
+    .footer-custom {
+    background-color: #8b9bb4;
+        color: #ffffff;
+        text-align: center;
+        /* Properti Flexbox */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        /* Gunakan GAP untuk mengatur jarak antar elemen */
+        gap: 10px; /* Ganti nilai 10px dengan jarak yang Anda inginkan */
+        
+        /* Atur padding vertikal pada container */
+        padding-top: 30px; /* Sesuaikan padding atas */
+        padding-bottom: 30px; /* Sesuaikan padding bawah */
+
+        /* Properti full-width */
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-custom .footer-logo {
+        margin: 0;
+        padding: 0;
+        line-height: 0; /* Tambahkan ini untuk memastikan tidak ada spasi ekstra */
+    }
+.footer-custom .footer-greeting {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.footer-custom .footer-logo-img {
+    width: 130px;
+}
+
+.footer-custom p {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-custom .footer-logo h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+}
+
+    .card-img-bank-logo {
+    width: 150px;  /* Atur lebar yang sama */
+    height: auto;  /* Biarkan tinggi menyesuaikan secara proporsional */
+    margin: 20px auto 0;
+    display: block;
+    }
+    .bank-logo {
+        width: 150px;  /* Atur lebar yang sama */
+        height: auto;  /* Biarkan tinggi menyesuaikan secara proporsional */
+        display: block;
+        margin: 20px auto 0;
+    }
+    .event-icon-cincin {
+        width: 100px;  /* Anda bisa menyesuaikan ukuran ini */
+        height: auto; /* Untuk menjaga proporsi */
+        margin-bottom: 1rem; /* Tambahkan jarak di bawah ikon */
+        /*
+        Mungkin juga perlu warna jika gambar Anda transparan dan Anda ingin memberikan warna.
+        Gunakan filter:
+        filter: sepia(100%) saturate(300%) hue-rotate(15deg);
+        */
+        }
+        .salam-text {
+            font-size: 20px; 
+            text-align: center;
+            color: #763f18;/* Ganti nilai 24px dengan ukuran yang Anda inginkan */
+         }
+         .couple-names {
+            font-family: 'Playfair Display', 'Great Vibes', cursive; /* Asumsi font */
+            font-size: 2.5em;
+            color: #0b1266; /* Kode warna asli */
+}
+
+        
+    </style>
+    
+</head>
+
+<body class="no-scroll">
+
+<div class="container-fluid p-0" id="home">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item position-relative active" style="height: 100vh; min-height: 400px;">
+                <img class="position-absolute w-100 h-100" src="img/carousel-3.png" style="object-fit: cover;">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3 text-center" style="max-width: 900px;">
+                        <div class="d-inline-block border-top border-bottom border-light py-3 px-4 fade-in-up fade-in-delay-1">
+                            <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 10px;">
+                                THE WEDDING OF
+                            </h3>
+                            </div>
+                            <h1 class="display-1 font-secondary text-white mt-3 mb-md-4 fade-in-up fade-in-delay-2">
+                            Hazna & Dimas
+                            </h1>
+                            <p id="guest-name" class="text-white mb-4 fade-in-up fade-in-delay-3">
+                            Kepada:
+                            </p>
+                            <p id="guest-name" class="text-white mb-4 fade-in-up fade-in-delay-3">
+            
+                            </p>
+                        <a href="#about" id="openInviteBtn" class="btn-buka-undangan fade-in-up fade-in-delay-4">
+                            <i class="fas mr-2"></i> Buka Undangan
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container-fluid py-5 fade-in-up" id="about" >
+        <div class="container py-5 fade-in-up">
+            <div class="section-title position-relative text-center fade-in-up fade-delay-1">
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">The Promises</h6>
+                <h1 class="font-secondary display-4">Hazna & Dimas</h1>
+                <i class="far fa-heart text-dark"></i>
+            </div>
+
+            <div class="text-center">
+                <blockquote class="blockquote font-italic mx-auto fade-in-up fade-delay-2" style="max-width: 1000px;">
+                    “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.”
+                    <footer class="blockquote-footer mt-2">QS. Ar-Rum : 21 <br> </footer>
+                </blockquote>
+                <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 fade-in-up" id="story" >
+        <div class="container py-5 fade-in-up">
+            <div position-relative text-center fade-in-up fade-delay-1>
+                <p style="text-align: center" class="salam-text" style="font-size: 3em;">
+                    بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <p class="font-italic mb-4 fade-in-up fade-delay-4" style="max-width: 1000px;">
+                    Assalamu’alaikum Wr. Wb.<br>
+                    Dengan segala kerendahan hati dan dengan ucapan syukur atas karunia Allah SWT, kami hendak menyampaikan kabar bahagia pernikahan kami:
+                </p>
+
+                <div class="row justify-content-center fade-in-up fade-delay-5">
+                    <div class="col-md-5 mb-4">
+                        <h3 class="couple-names">Hazna At Thooriqoh</h3>
+                        <p class="mb-1"><em>Putri ke-3 dari:</em></p>
+                        <p class="mb-1">Bapak Mokhamad Solikhin</p>
+                        <p class="mb-3">dan Ibu Kusmini</p>
+                        <p><i class="fab fa-instagram text-primary mr-2"></i>@hasnathooriq</p>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center justify-content-center">
+                        <span class="ampersand-icon">&amp;</span>
+                    </div>
+
+                    <div class="col-md-5 mb-4">
+                        <h3 class="couple-names">Dimas Nugroho Dwi Seputro</h3>
+                        <p class="mb-1"><em>Putra ke-2 dari:</em></p>
+                        <p class="mb-1">Bapak Setiono (Alm)</p>
+                        <p class="mb-3">dan Ibu Sundari</p>
+                        <p><i class="fab fa-instagram text-primary mr-2"></i>@dimaseputro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <div class="container-fluid py-5" id="story">
+    <div class="container py-5" id="event">
+        <div class="section-title text-center mb-5" >
+            <h6 class="text-uppercase text-primary fade-in-up fade-delay-1" style="letter-spacing: 3px;">Wedding Events</h6>
+            <h1 class="font-secondary display-4 fade-in-up fade-delay-1">Save The Date</h1>
+        </div>
+        <div class="row justify-content-center fade-in-up fade-delay-1">
+            <div class="col-md-5">
+                <div class="event-card">
+                    <img src="img/logo-cincin.png" alt="Ikon Cincin" class="event-icon-cincin">
+                    <h2 class="event-title">Akad Nikah</h2>
+                    <hr style="width: 60px; margin: 10px auto; border-top: 2px solid #aaa;">
+                    <p class="event-date">Jumat, 12 September 2025</p>
+                    <p class="event-time">07:00 WIB</p>
+                    <p class="event-location">Kediaman Mempelai Wanita : <br>
+                        Jl. Balai Desa No.6, Losari Timur, Dusun Simpang RT 38 RW 08, Sidoharjo, Kec. Gedeg, Kabupaten Mojokerto, Jawa Timur</p>
+                   <a href="https://www.google.com/maps/@-7.4482783,112.4316055,3a,75y,171.14h,75.22t/data=!3m7!1e1!3m5!1sXodTMRfqi6Ep4aIWmW9mOw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D14.779220662672216%26panoid%3DXodTMRfqi6Ep4aIWmW9mOw%26yaw%3D171.1358581884293!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgwNS4wIKXMDSoASAFQAw%3D%3D" class="event-button" target="_blank"><i class="fas fa-map-marker-alt"></i> Lihat Lokasi</a>
+                 </div>
+            </div>
+            <div class="col-md-5 fade-in-up fade-delay-1">
+                <div class="event-card">
+                    <img src="img/logo-cincin.png" alt="Ikon Cincin" class="event-icon-cincin">
+                    <h2 class="event-title">Resepsi</h2>
+                    <hr style="width: 60px; margin: 10px auto; border-top: 2px solid #aaa;">
+                    <p class="event-date">Jumat, 12 September 2025</p>
+                    <p class="event-time">09:00 – 11:00 WIB</p>
+                     <p class="event-location">Kediaman Mempelai Wanita : <br>
+                        
+                        Jl. Balai Desa No.6, Losari Timur, Dusun Simpang RT 38 RW 08, Sidoharjo, Kec. Gedeg, Kabupaten Mojokerto, Jawa Timur</p>
+                        <a href="https://www.google.com/maps/@-7.4482783,112.4316055,3a,75y,171.14h,75.22t/data=!3m7!1e1!3m5!1sXodTMRfqi6Ep4aIWmW9mOw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D14.779220662672216%26panoid%3DXodTMRfqi6Ep4aIWmW9mOw%26yaw%3D171.1358581884293!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDgwNS4wIKXMDSoASAFQAw%3D%3D" class="event-button" target="_blank"><i class="fas fa-map-marker-alt"></i> Lihat Lokasi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 fade-in-up fade-delay-1" id="wedding-gift">
+  <div class="container py-5">
+    <div class="section-title position-relative text-center">
+      <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Wedding Gift</h6>
+      <h1 class="font-secondary display-4">Kado Pernikahan</h1>
+      <i class="fas fa-gift text-dark"></i>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <p class="lead mb-4">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih, Anda dapat memberi kado secara cashless.</p>
+        <a href="#gift-detail" class="btn btn-lg" style="background-color: #8b9bb4; color: white; border-radius: 12px;">
+          <i class="fas fa-gift mr-2"></i>Wedding Gift
+        </a>
+      </div>
+    </div>
+
+    <div id="gift-detail" class="row justify-content-center mt-5">
+      <div class="col-md-6 mb-4 fade-in-up fade-delay-1">
+        <div class="card shadow-sm border-0">
+          <img src="img/logo-bni.png" alt="BNI" class="bank-logo">
+          <div class="card-body text-center">
+            <h5 class="card-title">1854834607</h5>
+            <p class="card-text mb-2">Hazna At Thooriqoh</p>
+            <button class="btn-salin" onclick="copyText('1854834607')">Salin</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4 fade-in-up fade-delay-1">
+        <div class="card shadow-sm border-0">
+          <img src="img/bank-mandiri.png" alt="Dana" class="bank-logo" style="border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
+          <div class="card-body text-center">
+            <h5 class="card-title">9000031933519</h5>
+            <p class="card-text mb-2">Dimas Nugroho Dwi Seputro</p>
+            <button class="btn-salin" onclick="copyText('9000031933519')">Salin</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      alert("Nomor telah disalin: " + text);
+    }, function(err) {
+      alert("Gagal menyalin: ", err);
+    });
+  }
+</script>
+    <!-- Event End -->
+
+        <!-- Event Start -->
+    <div class="container-fluid py-5 fade-in-up fade-delay-1" id="event">
+        <section id="countdown" class="py-5 text-center" style="background-color: #fdfaf7;">
+  <div class="container">
+    <h2 class="font-secondary display-4 mb-4">Counting Days</h2>
+    <p class="mb-4" style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+      Detik berganti detik hingga akhirnya berganti hari menjadi hari bahagia yang telah kami nantikan. Kami berharap kehadirannya untuk menjadi saksi dari awal bahtera cinta kami.
+    </p>
+    <div id="timer" class="d-flex justify-content-center mb-4" style="gap: 30px;">
+      <div>
+        <h1 class="display-4 text-brown" id="days">00</h1>
+        <small class="text-uppercase font-weight-bold">Hari</small>
+      </div>
+      <div>
+        <h1 class="display-4 text-brown" id="hours">00</h1>
+        <small class="text-uppercase font-weight-bold">Jam</small>
+      </div>
+      <div>
+        <h1 class="display-4 text-brown" id="minutes">00</h1>
+        <small class="text-uppercase font-weight-bold">Menit</small>
+      </div>
+      <div>
+        <h1 class="display-4 text-brown" id="seconds">00</h1>
+        <small class="text-uppercase font-weight-bold">Detik</small>
+      </div>
+    </div>
+    <!-- 
+   <a href="#" class="btn btn-lg" style="background-color: #c4a582; color: #fff; border-radius: 10px;">
+      <i class="far fa-calendar-check mr-2"></i>Tambahkan ke Kalender
+    </a>
+    Calender End -->
+  </div>
+
+  <style>
+    .text-brown {
+      color: #b8946f;
+    }
+  </style>
+
+  <script>
+    const weddingDate = new Date("Sept 12, 2025 09:00:00").getTime();
+    const timer = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+      document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+      document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+      document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("timer").innerHTML = "Acara telah dimulai!";
+      }
+    }, 1000);
+  </script>
+</section>
+    </div>
+
+    <!-- Footer Start -->
+     <div class="footer-custom fade-delay-1">
+        <p class="footer-greeting">Kami yang berbahagia</p>
+        <img src="img/logo-HD2.png" alt="Hazna & Dimas Logo" class="footer-logo-img">
+        <p>Made with 🤍</p>
+            </div>
+    <!-- Footer End -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const openBtn = document.getElementById("openInviteBtn");
+        const music = document.getElementById("bg-music");
+        const icon = document.getElementById("music-icon");
+
+        openBtn.addEventListener("click", function (e) {
+            e.preventDefault(); 
+            console.log("Tombol Buka Undangan diklik. Mencoba memutar musik...");
+
+            const playPromise = music.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log("Musik berhasil diputar.");
+                    icon.classList.remove("fa-volume-mute");
+                    icon.classList.add("fa-volume-up");
+                }).catch(error => {
+                    console.error("Autoplay musik diblokir oleh browser.", error);
+                });
+            }
+
+            document.body.classList.remove("no-scroll");
+            document.documentElement.classList.remove("no-scroll");
+
+            const target = document.querySelector("#about");
+            target.scrollIntoView({ behavior: "smooth" });
+        });
+    });
+
+    function toggleMusic() {
+        const music = document.getElementById("bg-music");
+        const icon = document.getElementById("music-icon");
+        if (music.paused) {
+            music.play();
+            icon.classList.remove("fa-volume-mute");
+            icon.classList.add("fa-volume-up");
+        } else {
+            music.pause();
+            icon.classList.remove("fa-volume-up");
+            icon.classList.add("fa-volume-mute");
+        }
+    }
+
+    // Mengambil nama tamu dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const guest = urlParams.get('to');
+
+    if (guest) {
+        document.getElementById('guest-name').innerHTML = `Kepada: <strong>${decodeURIComponent(guest)}</strong>`;
+    }
+
+    // Fungsi untuk menyalin teks (dipanggil dari tombol Salin)
+    function copyText(text) {
+        navigator.clipboard.writeText(text).then(function() {
+            alert("Nomor telah disalin: " + text);
+        }, function(err) {
+            alert("Gagal menyalin: ", err);
+        });
+    }
+
+    // Animasi Fade In Up
+    const faders = document.querySelectorAll('.fade-in-up');
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    faders.forEach(fader => {
+        fader.style.animationPlayState = 'paused';
+        appearOnScroll.observe(fader);
+    });
+    </script>
+  <audio id="bg-music" loop>
+  <source src="audio/lagu-pernikahan.mp3" type="audio/mpeg">
+</audio>
+<button id="music-toggle" onclick="toggleMusic()" class="music-btn">
+  <i id="music-icon" class="fas fa-volume-up"></i>
+</button>
+  <script>
+  const music = document.getElementById("bg-music");
+  const icon = document.getElementById("music-icon");
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+      icon.classList.remove("fa-volume-mute");
+      icon.classList.add("fa-volume-up");
+    } else {
+      music.pause();
+      icon.classList.remove("fa-volume-up");
+      icon.classList.add("fa-volume-mute");
+    }
+  }
+</script>
+</body>
+
+</html>
