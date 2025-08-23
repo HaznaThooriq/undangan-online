@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>Hazna & Dimas</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta content="The Wedding of Hazna & Dimas" name="keywords">
+    <meta content="The Wedding of Hazna & Dimas" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -146,8 +146,8 @@
         background-image: url("img/carousel-15.png");
         background-size: cover;
         background-position: center top;
-        padding-top: 280px; /* Tambah padding atas */
-        padding-bottom: 280px; /* Tambah padding bawah */
+        padding-top: 5rem; /* Tambah padding atas */
+        padding-bottom: 5rem; /* Tambah padding bawah */
         /*background-position: center;
         background-repeat: no-repeat;
         margin-top: 0 ;
@@ -363,9 +363,24 @@
         overflow: hidden;
         }
         #story {
-        background-image: url('img/carousel-14.png');
+        background-image: linear-gradient(to top, #fdfaf7, transparent), url('img/carousel-14.png');
         background-size: cover;
         background-position: center;
+        }
+        #event {
+            background-size: cover;
+            position: relative;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            overflow: hidden;
+        }
+        #date {
+        background-image: linear-gradient(to top, #fdfaf7, transparent), url('img/carousel-14.png');
+        background-size: cover;
+        background-position: center;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        overflow: hidden;
         }
         #wedding-gift {
             background-color: #f0f0f0; /* Soft gray color */
@@ -374,7 +389,7 @@
             background-position: center;
         }
         #contact {
-            background-image: url('img/footer-background.png');
+            background-image:linear-gradient(to top, #fdfaf7, transparent), url('img/footer-background.png');
             background-size: cover;
             background-position: center;
     }
@@ -516,7 +531,7 @@
         </div>
     </div>
 
-    <div class="container-fluid py-5 fade-in-up" id="story" >
+    <div class="container-fluid py-5" id="story" >
         <div class="container py-5 fade-in-up">
             <div position-relative text-center fade-in-up fade-delay-1>
                 <p style="text-align: center" class="salam-text" style="font-size: 3em;">
@@ -554,7 +569,6 @@
         </div>
     </div>
     <!-- About End -->
-
 
     <div class="container-fluid py-5" id="story">
     <div class="container py-5" id="event">
@@ -782,7 +796,9 @@
     const guest = urlParams.get('to');
 
     if (guest) {
-        document.getElementById('guest-name').innerHTML = `Kepada: <strong>${decodeURIComponent(guest)}</strong>`;
+        // Mengganti spasi yang tidak di-encode (jika ada) dan kemudian mendekode
+        const decodedGuest = decodeURIComponent(guest.replace(/\s/g, '%20'));
+        document.getElementById('guest-name').innerHTML = `Kepada: <strong>${decodedGuest}</strong>`;
     }
 
     // Fungsi untuk menyalin teks (dipanggil dari tombol Salin)
